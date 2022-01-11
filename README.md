@@ -1,6 +1,6 @@
 # opensearch-ts-boilerplate
 
-## Description
+## description
 
 Boilerplate project for starting opensearch microservice with integration tests
 
