@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  opensearch:
+    image: opensearchproject/opensearch:1.2.3
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
+    ports:
+      - 9200:9200
+
+  service:
+    build: .
+    environment:
+      - PORT=3000
+      - OPENSEARCH_URL=http://opensearch:9200
+      - USERNAME=admin
+      - PASSWORD=admin
+    depends_on:
+      - opensearch
+
+  service-integration-tests:
+    build:
+      context: .
+      target: test
+    environment:
+      - SERVICE_URL=http://service:3000
