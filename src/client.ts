@@ -11,6 +11,7 @@ export const waitCluster = async (client: Client, times = 0): Promise<void> => {
       return waitCluster(client, times);
     }
     console.error(err);
+    // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
 };

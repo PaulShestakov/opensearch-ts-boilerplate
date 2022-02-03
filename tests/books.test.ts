@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-import */
 import got from "got";
 import {v4} from "uuid";
 import retry from "async-retry";

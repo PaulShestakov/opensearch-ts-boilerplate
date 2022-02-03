@@ -1,6 +1,5 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
-import {resolveConfig} from "prettier";
 import {BooksRepository} from "../repository/books";
 
 export const createBooksRouter = (booksRepository: BooksRepository) => {
