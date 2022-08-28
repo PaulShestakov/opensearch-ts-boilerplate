@@ -18,12 +18,6 @@ COPY . .
 RUN yarn build
 
 
-# ---- Test ----
-FROM dependencies AS test
-COPY . .
-CMD ["yarn", "test"]
-
-
 # ---- Release ----
 FROM base AS release
 COPY --from=dependencies /usr/src/app/prod_node_modules /usr/src/app/node_modules

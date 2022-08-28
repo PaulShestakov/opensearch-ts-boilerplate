@@ -27,4 +27,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: tests
-        run: docker-compose up --abort-on-container-exit --exit-code-from service-integration-tests
+        run: yarn test

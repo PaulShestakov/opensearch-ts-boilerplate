@@ -2,7 +2,7 @@
 
 ## description
 
-Boilerplate project for starting opensearch microservice with integration tests
+Boilerplate project for starting opensearch microservice with component tests
 
 ## .env file structure
 
@@ -13,8 +13,8 @@ OPENSEARCH_USERNAME=admin
 OPENSEARCH_PASSWORD=admin
 ```
 
-## integration tests
+## tests
 
 ```
-docker-compose up --abort-on-container-exit --exit-code-from service-integration-tests
+yarn test
 ```

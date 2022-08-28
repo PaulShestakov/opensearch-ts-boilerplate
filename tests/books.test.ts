@@ -2,26 +2,21 @@
 import got from "got";
 import {v4} from "uuid";
 import retry from "async-retry";
+import {setupTestContext} from "./setup-test-context";
+import {serverConfig} from "./config";
 
-const url = process.env.SERVICE_URL;
-
-const waitForService = async () =>
-  retry(async () => {
-    return got.get(`${url}/health`);
-  });
+const serverUrl = `http://localhost:${serverConfig.port}`;
 
 const addBook = async (book: any) => {
-  return got.post(`${url}/books`, {json: book});
+  return got.post(`${serverUrl}/books`, {json: book});
 };
 
 const queryBooks = async (title: any) => {
-  return got(`${url}/query?title=${title}`).json();
+  return got(`${serverUrl}/query?title=${title}`).json();
 };
 
 describe("books tests", () => {
-  beforeAll(async () => {
-    await waitForService();
-  });
+  setupTestContext();
 
   it("added book should get searchable by title", async () => {
     const book = {
@@ -33,8 +28,6 @@ describe("books tests", () => {
     };
 
     await addBook(book);
-
-    console.log(book);
 
     const predicate = (books: any[]) => books.find((item) => item.id === book.id);
 

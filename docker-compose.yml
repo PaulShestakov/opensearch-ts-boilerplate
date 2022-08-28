@@ -11,19 +11,19 @@ services:
     ports:
       - 9200:9200
 
-  service:
-    build: .
-    environment:
-      - PORT=3000
-      - OPENSEARCH_URL=http://opensearch:9200
-      - USERNAME=admin
-      - PASSWORD=admin
-    depends_on:
-      - opensearch
+  # service:
+  #   build: .
+  #   environment:
+  #     - PORT=3000
+  #     - OPENSEARCH_URL=http://opensearch:9200
+  #     - USERNAME=admin
+  #     - PASSWORD=admin
+  #   depends_on:
+  #     - opensearch
 
-  service-integration-tests:
-    build:
-      context: .
-      target: test
-    environment:
-      - SERVICE_URL=http://service:3000
+  # service-integration-tests:
+  #   build:
+  #     context: .
+  #     target: test
+  #   environment:
+  #     - SERVICE_URL=http://service:3000
