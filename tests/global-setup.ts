@@ -1,3 +1,4 @@
+// eslint-disable-next-line node/no-unpublished-import
 import dockerCompose from "docker-compose";
 import path from "node:path";
 import url from "node:url";
