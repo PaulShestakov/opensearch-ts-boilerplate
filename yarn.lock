@@ -1570,7 +1570,7 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-docker-compose@^0.23.17:
+docker-compose@0.23.17:
   version "0.23.17"
   resolved "https://registry.yarnpkg.com/docker-compose/-/docker-compose-0.23.17.tgz#8816bef82562d9417dc8c790aa4871350f93a2ba"
   integrity sha512-YJV18YoYIcxOdJKeFcCFihE6F4M2NExWM/d4S1ITcS9samHKnNUihz9kjggr0dNtsrbpFNc7/Yzd19DWs+m1xg==
@@ -3835,7 +3835,7 @@ ts-jest@27.1.2:
     semver "7.x"
     yargs-parser "20.x"
 
-ts-node@^10.9.1:
+ts-node@10.9.1:
   version "10.9.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
   integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
