@@ -11,6 +11,8 @@ try {
     const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     const root = path.join(__dirname, "..");
 
+    console.log(`Taking docker-compose from ${root}`);
+
     await dockerCompose.upAll({cwd: root, log: true});
   }
 
